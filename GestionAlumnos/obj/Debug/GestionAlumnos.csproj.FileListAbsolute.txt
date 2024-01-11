@@ -1,0 +1,11 @@
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\bin\Debug\GestionAlumnos.exe.config
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\bin\Debug\GestionAlumnos.exe
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\bin\Debug\GestionAlumnos.pdb
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\obj\Debug\GestionAlumnos.csproj.AssemblyReference.cache
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\obj\Debug\GestionAlumnos.Form1.resources
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\obj\Debug\GestionAlumnos.Properties.Resources.resources
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\obj\Debug\GestionAlumnos.csproj.GenerateResource.cache
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\obj\Debug\GestionAlumnos.csproj.CoreCompileInputs.cache
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\obj\Debug\GestionAlumnos.exe
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\obj\Debug\GestionAlumnos.pdb
+C:\Users\2DAM\Desktop\git\GestionAlumnos\GestionAlumnos\bin\Debug\practica.accdb
