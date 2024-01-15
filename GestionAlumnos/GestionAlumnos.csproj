@@ -59,6 +59,16 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="practicaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>practicaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="practicaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>practicaDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -83,6 +93,28 @@
     </None>
     <None Include="alumnosDataSet.xss">
       <DependentUpon>alumnosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="practicaDataSet.xsc">
+      <DependentUpon>practicaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="practicaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>practicaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="practicaDataSet.xss">
+      <DependentUpon>practicaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="practicaDataSet1.xsc">
+      <DependentUpon>practicaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="practicaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>practicaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="practicaDataSet1.xss">
+      <DependentUpon>practicaDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
