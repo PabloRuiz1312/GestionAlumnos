@@ -29,6 +29,8 @@ namespace GestionAlumnos
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'practicaDataSet2.Notas' Puede moverla o quitarla según sea necesario.
+            this.notasTableAdapter.Fill(this.practicaDataSet2.Notas);
             // TODO: esta línea de código carga datos en la tabla 'practicaDataSet1.Evaluaciones' Puede moverla o quitarla según sea necesario.
             this.evaluacionesTableAdapter1.Fill(this.practicaDataSet1.Evaluaciones);
             // TODO: esta línea de código carga datos en la tabla 'practicaDataSet.Evaluaciones' Puede moverla o quitarla según sea necesario.
@@ -342,6 +344,7 @@ namespace GestionAlumnos
         private void cargarListaEvauAlumnos()
         {
             panel6.Visible = true;
+            cargarComboBox();
         }
 
         private void mostrarTodos_CheckedChanged(object sender, EventArgs e)
@@ -360,7 +363,7 @@ namespace GestionAlumnos
 
         private void cargarComboBox()
         {
-            string connetionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=|DataDirectory|\\gestion.accdb";
+            string connetionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=|DataDirectory|\\practica.accdb";
             string sentencia = "select Id,Evaluacion from Evaluaciones";
             OleDbConnection connection;
             OleDbCommand command;
@@ -387,36 +390,92 @@ namespace GestionAlumnos
         }
         private void comboEvau_SelectedValueChanged(object sender, EventArgs e)
         {
-            
+           cargarListBox();
         }
 
         private void cargarListBox()
         {
-            string connetionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=|DataDirectory|\\gestion.accdb";
-            string sentencia = "select concat(Nombre,\" \",Apellidos),Id from Alumnos from Alumnos";
+            string connetionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=|DataDirectory|\\practica.accdb";
+            string sentencia = "select Nombre,Apellidos,Id from Alumnos";
             OleDbConnection connection;
             OleDbCommand command;
             OleDbDataAdapter adapter = new OleDbDataAdapter();
             DataSet ds = new DataSet();
             connection = new OleDbConnection(connetionString);
             List<String> listaNombres =  new List<string>();
-            //OleDbDataReader reader = new OleDbDataReader();
+            OleDbDataReader reader;
             try
             {
+                listAlumnos.Items.Clear();
                 connection.Open();
                 command = new OleDbCommand(sentencia, connection);
                 adapter.SelectCommand = command;
                 adapter.Fill(ds);
-                adapter.Dispose();
+                reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                   String dato = "";
+                    dato += reader.GetString(0)+",";
+                    dato += reader.GetString(1);
+                    listAlumnos.Items.Add(dato);
+                }
                 command.Dispose();
-                connection.Close();
-                //listBox1.DataSource = ds.Tables[0];
-                //listBox1.ValueMember = "idProveedor";
-                //listBox1.DisplayMember = "descripcion";
+                adapter.Dispose();
+                connection.Close();  
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Can not open connection ! " + ex.ToString());
+            }
+        }
+
+        private void botonConsultar_Click(object sender, EventArgs e)
+        {
+            if(this.mostrarTodos.Checked)
+            {
+
+            }
+            else 
+            {
+                if(listAlumnos.Text.Equals(""))
+                {
+                    MessageBox.Show("No has seleccionado ningun alumno");
+                }
+                else
+                {
+                    String[] splitData = listAlumnos.Text.Split(',');
+                    String nombre = splitData[0];
+                    String apellido = splitData[1];
+                    apellido = apellido.Trim();
+                    MessageBox.Show(nombre + "" + apellido);
+                    mostrarNotaAlumno(nombre, apellido);
+                }
+            }
+        }
+
+        private void mostrarNotaAlumno(String nombre,String apellidos)
+        {
+            String connetionString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=|DataDirectory|\\practica.accdb";
+            string sentencia = "select * from Notas where Id_Alumno = (select Id from Alumnos where Nombre = '" + nombre + "' and Apellidos = '" + apellidos + "')";
+            OleDbConnection connection;
+            connection = new OleDbConnection(connetionString);
+            try
+            {
+                connection.Open();
+                this.oleCommand = new OleDbCommand(sentencia, connection);
+                this.oleAdapter = new OleDbDataAdapter(this.oleCommand);
+                this.oleBuilder = new OleDbCommandBuilder(this.oleAdapter);
+                this.dataSet = new DataSet();
+                this.oleAdapter.Fill(dataSet, "Notas");
+                this.table = dataSet.Tables["Notas"];
+                connection.Close();
+                dataGridView3.DataSource = dataSet.Tables["Notas"];
+                dataGridView3.ReadOnly = true;
+                dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Can not open the connection ! " + ex.ToString());
             }
         }
     }

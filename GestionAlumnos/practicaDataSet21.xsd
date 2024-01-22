@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="practicaDataSet2" targetNamespace="http://tempuri.org/practicaDataSet21.xsd" xmlns:mstns="http://tempuri.org/practicaDataSet21.xsd" xmlns="http://tempuri.org/practicaDataSet21.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="practicaConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="practicaConnectionString (Settings)" PropertyReference="ApplicationSettings.GestionAlumnos.Properties.Settings.GlobalReference.Default.practicaConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NotasTableAdapter" GeneratorDataComponentClassName="NotasTableAdapter" Name="Notas" UserDataComponentName="NotasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="practicaConnectionString (Settings)" DbObjectName="Notas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT DI, PMDM, AD FROM Notas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DI" DataSetColumn="DI" />
+              <Mapping SourceColumn="PMDM" DataSetColumn="PMDM" />
+              <Mapping SourceColumn="AD" DataSetColumn="AD" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="practicaDataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="practicaDataSet2" msprop:Generator_DataSetName="practicaDataSet2">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Notas" msprop:Generator_RowEvHandlerName="NotasRowChangeEventHandler" msprop:Generator_RowDeletedName="NotasRowDeleted" msprop:Generator_RowDeletingName="NotasRowDeleting" msprop:Generator_RowEvArgName="NotasRowChangeEvent" msprop:Generator_TablePropName="Notas" msprop:Generator_RowChangedName="NotasRowChanged" msprop:Generator_RowChangingName="NotasRowChanging" msprop:Generator_TableClassName="NotasDataTable" msprop:Generator_RowClassName="NotasRow" msprop:Generator_TableVarName="tableNotas" msprop:Generator_UserTableName="Notas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DI" msprop:Generator_ColumnPropNameInRow="DI" msprop:Generator_ColumnPropNameInTable="DIColumn" msprop:Generator_ColumnVarNameInTable="columnDI" msprop:Generator_UserColumnName="DI" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="PMDM" msprop:Generator_ColumnPropNameInRow="PMDM" msprop:Generator_ColumnPropNameInTable="PMDMColumn" msprop:Generator_ColumnVarNameInTable="columnPMDM" msprop:Generator_UserColumnName="PMDM" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="AD" msprop:Generator_ColumnPropNameInRow="AD" msprop:Generator_ColumnPropNameInTable="ADColumn" msprop:Generator_ColumnVarNameInTable="columnAD" msprop:Generator_UserColumnName="AD" type="xs:unsignedByte" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

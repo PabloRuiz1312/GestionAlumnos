@@ -69,6 +69,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>practicaDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="practicaDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>practicaDataSet21.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -115,6 +120,17 @@
     </None>
     <None Include="practicaDataSet1.xss">
       <DependentUpon>practicaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="practicaDataSet21.xsc">
+      <DependentUpon>practicaDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="practicaDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>practicaDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="practicaDataSet21.xss">
+      <DependentUpon>practicaDataSet21.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
